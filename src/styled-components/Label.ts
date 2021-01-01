@@ -8,4 +8,5 @@ export const Label = styled.label`
   font-size: 25px;
   text-transform: uppercase;
   padding: 10px 20px;
+  width: 150px;
 `

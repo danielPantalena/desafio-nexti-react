@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Input, Label } from '../../styled-components';
+import { Button, Input, Label, FlexColumn, FlexRow } from '../../styled-components';
 
 interface IProps {
   setLoggedIn: { (loggedIn: boolean): void };
@@ -7,11 +7,19 @@ interface IProps {
 
 export const Login: React.FC<IProps> = ({ setLoggedIn }) => {
   return (
-    <div>
-      <Label htmlFor="user">User</Label>
-      <Input id="user"/>
-      <Button onClick={() => setLoggedIn(true)}>LogIn</Button>
-    </div>
+    <FlexColumn>
+      <FlexRow>
+        <Label htmlFor="user">User</Label>
+        <Input id="user" />
+      </FlexRow>
+      <FlexRow>
+        <Label htmlFor="password">password</Label>
+        <Input id="password" />
+      </FlexRow>
+      <FlexRow>
+        <Button onClick={() => setLoggedIn(true)}>LogIn</Button>
+      </FlexRow>
+    </FlexColumn>
   );
 };
 
