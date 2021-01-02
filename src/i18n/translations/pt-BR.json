@@ -1,5 +1,8 @@
 {
   "translation": {
-    "Welcome to React": "Bem vindo ao React"
+    "Welcome to React": "Bem vindo ao React",
+    "User": "Usuário",
+    "Password": "Senha",
+    "Login": "Entrar"
   }
 }

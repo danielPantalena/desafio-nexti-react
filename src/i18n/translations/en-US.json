@@ -1,5 +1,8 @@
 {
   "translation": {
-    "Welcome to React": "Welcome to React and react-i18next"
+    "Welcome to React": "Welcome To React",
+    "User": "User",
+    "Password": "Password",
+    "Login": "Login"
   }
 }

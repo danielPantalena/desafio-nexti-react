@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button, Input, FlexColumn, FlexRow } from '../../styled-components';
-import { validateLogIn } from '../../helperFunctions';
+import { validateLogin } from '../../helperFunctions';
 
 interface IProps {
   setLoggedIn: { (loggedIn: boolean): void };
 }
 
 export const Login: React.FC<IProps> = ({ setLoggedIn }) => {
+  const { t } = useTranslation();
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const [invalidCredentials, setInvalidCredentials] = useState(false);
 
-  const handleLogIn = () => {
-    const isValidLogIn = validateLogIn(user, password);
-    setInvalidCredentials(!isValidLogIn);
-    return setLoggedIn(isValidLogIn);
+  const handleLogin = () => {
+    const isValidLogin = validateLogin(user, password);
+    setInvalidCredentials(!isValidLogin);
+    return setLoggedIn(isValidLogin);
   };
 
   return (
@@ -23,7 +25,7 @@ export const Login: React.FC<IProps> = ({ setLoggedIn }) => {
         <Input
           id="user"
           value={user}
-          placeholder="User"
+          placeholder={t('User')}
           onChange={(event) => setUser(event.target.value)}
         />
       </FlexRow>
@@ -31,13 +33,13 @@ export const Login: React.FC<IProps> = ({ setLoggedIn }) => {
         <Input
           id="password"
           value={password}
-          placeholder="Password"
+          placeholder={t('Password')}
           onChange={(event) => setPassword(event.target.value)}
         />
       </FlexRow>
       <FlexRow>
-        <Button onClick={handleLogIn} disabled={!user || !password}>
-          LogIn
+        <Button onClick={handleLogin} disabled={!user || !password}>
+          {t('Login')}
         </Button>
       </FlexRow>
       {invalidCredentials && <FlexRow>Invalid Credentials</FlexRow>}
