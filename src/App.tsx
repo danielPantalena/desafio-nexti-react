@@ -10,14 +10,22 @@ function App() {
   const { t } = useTranslation();
   const [loggedIn, setLoggedIn] = useState(false);
   const [theme, setTheme] = useState('light');
+  const [showDropdownMenu, setShowDropdownMenu] = useState(false);
 
   const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+
+  const handleClickOutsideDropdownMenu = () => setShowDropdownMenu(false);
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <Header toggleTheme={toggleTheme} />
-      <div className="App">
+      <Header
+        toggleTheme={toggleTheme}
+        theme={theme}
+        showDropdownMenu={showDropdownMenu}
+        setShowDropdownMenu={setShowDropdownMenu}
+      />
+      <div className="App" onClick={handleClickOutsideDropdownMenu}>
         <button onClick={toggleTheme}>Change Theme</button>
         <SelectLanguage />
         {loggedIn ? <h1>{t('Welcome to React')}</h1> : <Login setLoggedIn={setLoggedIn} />}

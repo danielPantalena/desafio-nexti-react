@@ -3,19 +3,33 @@ import { BiMenu } from 'react-icons/bi';
 import { CgDarkMode } from 'react-icons/cg';
 import { useTranslation } from 'react-i18next';
 
-import { SelectLanguage } from '../../components';
+import { SelectLanguage, ThemeButton } from '../../components';
 import { FlexRow } from '../../styled-components';
 
 import './style.css';
 
 interface IProps {
+  theme: string;
   toggleTheme: { (): void };
+  showDropdownMenu: boolean;
+  setShowDropdownMenu: { (showMenu: boolean): void };
 }
 
-const Header: React.FC<IProps> = ({ toggleTheme }) => {
-  const [showMenu, setShowMenu] = useState(true);
-
+const Header: React.FC<IProps> = ({
+  theme,
+  toggleTheme,
+  showDropdownMenu,
+  setShowDropdownMenu,
+}) => {
   const { t } = useTranslation();
+  const [themeMode, setThemeMode] = useState(theme);
+
+  const handleDropdownMenu = () => setShowDropdownMenu(!showDropdownMenu);
+
+  const handleTheme = () => {
+    toggleTheme();
+  };
+
   return (
     <>
       <header>
@@ -28,17 +42,18 @@ const Header: React.FC<IProps> = ({ toggleTheme }) => {
                   {t('Help')}
                 </a>
               </li>
-              <li>{t('Settings')}</li>
+              <li onClick={handleDropdownMenu}>{t('Settings')}</li>
             </ul>
           </nav>
         </FlexRow>
       </header>
-      {showMenu && (
+      {showDropdownMenu && (
         <div className="dropdown-menu">
           <ul>
             <li>{t('Logout')}</li>
-            <li onClick={toggleTheme}>
-              {t('Theme')} <CgDarkMode />
+            <li onClick={handleTheme}>
+              {t(theme)}
+              <ThemeButton theme={theme} />
             </li>
             <li>
               <SelectLanguage />

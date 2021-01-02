@@ -1,0 +1,42 @@
+.theme-button {
+  height: 15px;
+  transition: all 400ms;
+}
+
+.theme-button:hover {
+  cursor: pointer;
+}
+
+div.theme-button.container {
+  width: 30px;
+  border: 1px solid rgb(41, 41, 41);
+  border-radius: 8px;
+}
+
+div.theme-button.container.light {
+  background-color: rgb(190, 190, 190);
+}
+
+
+div.theme-button.container.dark {
+  background-color: black;
+  border: 1px solid rgb(170, 170, 170)
+}
+
+div.theme-button.ball {
+  border-radius: 8px;
+  border: 1px solid rgb(41, 41, 41);
+  margin-top: -1px;
+  width: 15px;
+}
+
+div.theme-button.ball.light {
+  background-color: rgb(136, 0, 136);
+  margin-left: -1px;
+}
+
+div.theme-button.ball.dark {
+  background-color: rgb(206, 0, 206);
+  margin-left: 14px;
+  border: 1px solid rgb(170, 170, 170);
+}
