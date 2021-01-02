@@ -2,17 +2,12 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles } from './themes';
-import { SelectLanguage } from './components';
-
-// import './i18n';
-
-import './App.css';
 import Login from './screens/Login/Login';
-import i18n from './i18n';
+import { Header, SelectLanguage } from './components';
+import './App.css';
 
 function App() {
   const { t } = useTranslation();
-  // i18n.changeLanguage('en') // to change language
   const [loggedIn, setLoggedIn] = useState(false);
   const [theme, setTheme] = useState('light');
 
@@ -21,6 +16,7 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
+      <Header />
       <div className="App">
         <button onClick={toggleTheme}>Change Theme</button>
         <SelectLanguage />
