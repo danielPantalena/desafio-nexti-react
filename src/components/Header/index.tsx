@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BiMenu } from 'react-icons/bi';
-import { CgDarkMode } from 'react-icons/cg';
 import { useTranslation } from 'react-i18next';
 
 import { SelectLanguage, ThemeButton } from '../../components';
