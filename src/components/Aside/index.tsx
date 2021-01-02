@@ -1,7 +1,7 @@
 import React from 'react';
-import { UserInitials } from '../'
-import { FlexColumn } from '../../styled-components';
-import './style.css'
+import { UserInitials } from '../';
+import { FlexColumn, FlexRow } from '../../styled-components';
+import './style.css';
 
 interface IUser {
   firstName: string;
@@ -17,7 +17,10 @@ const Aside: React.FC<IProps> = ({ userData }) => {
   return (
     <aside className="container">
       <FlexColumn>
-        <UserInitials initials={initials} />
+        <FlexRow>
+          <UserInitials initials={initials} />
+          <span className="text-novo">NOVO</span>
+        </FlexRow>
       </FlexColumn>
     </aside>
   );
