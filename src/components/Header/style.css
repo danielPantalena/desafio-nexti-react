@@ -1,0 +1,21 @@
+header {
+  background-color: rgb(60, 60, 60);
+  color: white;
+  padding: 10px 20px;
+}
+
+ul.nav-list {
+  display: flex;
+  width: fit-content;
+  list-style-type: none;
+
+}
+
+li {
+  margin: 5px 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
