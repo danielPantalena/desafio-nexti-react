@@ -1,12 +1,30 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Button = styled.button`
-  border-radius: 10px;
-  border: 1px solid black;
   background-color: orange;
+  border-radius: 10px;
+  border: 2px solid black;
   color: white;
-  font-weight: bold;
+  flex-grow: 1;
   font-size: 25px;
-  text-transform: uppercase;
+  font-weight: bold;
   padding: 10px 20px;
-`
+  text-transform: uppercase;
+  transition: all 400ms;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    box-shadow: 2px 2px 2px black;
+  }
+  &:active {
+    cursor: progress;
+    transform: scale(0.98);
+    box-shadow: none;
+  }
+  &:disabled {
+    cursor: auto;
+    transform: scale(1);
+    opacity: 0.6;
+    box-shadow: none;
+  }
+`;
