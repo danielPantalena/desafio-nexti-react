@@ -1,13 +1,25 @@
-import React from 'react'
-import { Aside } from '../../components'
+import React from 'react';
+import { Aside, Content } from '../../components';
+import { FlexRow } from '../../styled-components';
 
-export const Main = () => {
-  return (
-    <div>
-      <Aside />
-    </div>
-  )
+interface IUser {
+  firstName: string;
+  lastName: string;
+  id: number;
+}
+interface IProps {
+  userData: IUser;
 }
 
-export default Main;
+export const Main: React.FC<IProps> = ({ userData }) => {
+  return (
+    <div>
+      <FlexRow>
+        <Aside userData={userData} />
+        <Content />
+      </FlexRow>
+    </div>
+  );
+};
 
+export default Main;

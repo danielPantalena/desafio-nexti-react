@@ -5,8 +5,8 @@ interface IUser {
 }
 
 const mockUser = {
-  firstName: 'User',
-  lastName: 'User',
+  firstName: 'UserFirstName',
+  lastName: 'UserLastName',
   id: 1,
 };
 

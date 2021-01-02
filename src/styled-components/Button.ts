@@ -11,6 +11,7 @@ export const Button = styled.button`
   padding: 10px 20px;
   text-transform: uppercase;
   transition: all 400ms;
+  margin: 10px;
   &:hover {
     cursor: pointer;
     transform: scale(1.02);
@@ -24,7 +25,7 @@ export const Button = styled.button`
   &:disabled {
     cursor: auto;
     transform: scale(1);
-    opacity: 0.6;
+    opacity: 0.4;
     box-shadow: none;
   }
 `;

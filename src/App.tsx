@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles } from './themes';
 import { Login, Main } from './screens';
@@ -13,7 +12,6 @@ interface IUser {
 }
 
 function App() {
-  const { t } = useTranslation();
   const [loggedIn, setLoggedIn] = useState(false);
   const [userData, setUserData] = useState<IUser>({ firstName: '', lastName: '', id: 0 });
   const [theme, setTheme] = useState('light');
@@ -42,7 +40,7 @@ function App() {
         handleLogout={handleLogout}
       />
       <div className="App" onClick={handleClickOutsideDropdownMenu}>
-        {loggedIn ? <Main /> : <Login handleLogin={handleLogin} />}
+        {loggedIn ? <Main userData={userData} /> : <Login handleLogin={handleLogin} />}
       </div>
     </ThemeProvider>
   );
