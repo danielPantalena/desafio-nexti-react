@@ -1,0 +1,11 @@
+div.initials-ball {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: purple;
+  color: white;
+  font-size: 30px;
+  overflow: hidden;
+  font-weight: bold;
+}
