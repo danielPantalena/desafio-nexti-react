@@ -19,7 +19,7 @@ const Aside: React.FC<IProps> = ({ userData }) => {
   const [menusList, setTasksList] = useState<any>([]); // TODO: Type TS
 
   useEffect(() => {
-    getMenusList().then((menusList) => setTasksList(menusList));
+    getMenusList().then((response) => setTasksList(response))
   }, []);
 
   return (

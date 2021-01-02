@@ -1,4 +1,5 @@
 import React from 'react';
+import { Menu } from '../../components';
 
 interface IMenu {
   id: number;
@@ -13,12 +14,8 @@ interface IProps {
 const MenusList: React.FC<IProps> = ({ menusList }) => {
   return (
     <ul>
-      {menusList?.map((menu) => (
-        <ul>
-          {menu?.subMenus.map((subMenu) => (
-            <li key={subMenu.id}>{subMenu.name}</li>
-          ))}
-        </ul>
+      {menusList.map((menu) => (
+        <Menu menu={menu} />
       ))}
     </ul>
   );
