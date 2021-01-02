@@ -8,8 +8,11 @@ interface IProps {
 
 const UserInitials: React.FC<IProps> = ({ initials }) => {
   return (
-    <div className="initials-ball">
-      {initials}
+    <div className="initials-container">
+      <div className="initials-ball">
+        <span>{initials.toUpperCase()}</span>
+      </div>
+      <div className="online-ball" />
     </div>
   );
 };
