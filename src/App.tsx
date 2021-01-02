@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles } from './themes';
-import Login from './screens/Login/Login';
-import { Header, SelectLanguage } from './components';
+import { Login } from './screens';
+import { Header } from './components';
 import './App.css';
 
 function App() {

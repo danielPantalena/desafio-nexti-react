@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Input, FlexColumn, FlexRow } from '../../styled-components';
-import { validateLogin } from '../../helperFunctions';
+import { getUser } from '../../helperFunctions';
 
 interface IProps {
   setLoggedIn: { (loggedIn: boolean): void };
@@ -14,9 +14,9 @@ export const Login: React.FC<IProps> = ({ setLoggedIn }) => {
   const [invalidCredentials, setInvalidCredentials] = useState(false);
 
   const handleLogin = () => {
-    const isValidLogin = validateLogin(user, password);
+    const isValidLogin = getUser(user, password);
     setInvalidCredentials(!isValidLogin);
-    return setLoggedIn(isValidLogin);
+    return setLoggedIn(!!isValidLogin);
   };
 
   return (
