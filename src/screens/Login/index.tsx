@@ -1,22 +1,28 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Input, FlexColumn, FlexRow } from '../../styled-components';
-import { validateLogin } from '../../helperFunctions';
+import { getUser } from '../../helperFunctions';
 
+interface IUser {
+  firstName: string;
+  lastName: string;
+  id: number;
+}
 interface IProps {
-  setLoggedIn: { (loggedIn: boolean): void };
+  handleLogin: { (userData: IUser): void };
 }
 
-export const Login: React.FC<IProps> = ({ setLoggedIn }) => {
+export const Login: React.FC<IProps> = ({ handleLogin }) => {
   const { t } = useTranslation();
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const [invalidCredentials, setInvalidCredentials] = useState(false);
 
-  const handleLogin = () => {
-    const isValidLogin = validateLogin(user, password);
-    setInvalidCredentials(!isValidLogin);
-    return setLoggedIn(isValidLogin);
+  const handleUserLogin = () => {
+    const userData = getUser(user, password);
+    if (!userData) return setInvalidCredentials(true);
+    setInvalidCredentials(false);
+    return handleLogin(userData);
   };
 
   return (
@@ -38,7 +44,7 @@ export const Login: React.FC<IProps> = ({ setLoggedIn }) => {
         />
       </FlexRow>
       <FlexRow>
-        <Button onClick={handleLogin} disabled={!user || !password}>
+        <Button onClick={handleUserLogin} disabled={!user || !password}>
           {t('Login')}
         </Button>
       </FlexRow>

@@ -1,0 +1,10 @@
+aside.container {
+  flex-grow: 1;
+  height: 100%;
+  padding: 1% 2%;
+}
+
+span.text-novo {
+  color: rgb(255, 115, 0);
+  font-weight: bold;
+}

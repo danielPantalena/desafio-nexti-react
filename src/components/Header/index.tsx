@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BiMenu } from 'react-icons/bi';
-import { CgDarkMode } from 'react-icons/cg';
 import { useTranslation } from 'react-i18next';
 
 import { SelectLanguage, ThemeButton } from '../../components';
@@ -26,7 +25,6 @@ const Header: React.FC<IProps> = ({
   handleLogout,
 }) => {
   const { t } = useTranslation();
-  const [themeMode, setThemeMode] = useState(theme);
 
   const handleDropdownMenu = () => setShowDropdownMenu(!showDropdownMenu);
 
