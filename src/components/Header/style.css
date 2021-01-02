@@ -1,7 +1,7 @@
 header {
   background-color: rgb(60, 60, 60);
   color: white;
-  padding: 10px 20px;
+  padding: 10px 40px;
 }
 
 ul.nav-list {
@@ -12,10 +12,34 @@ ul.nav-list {
 }
 
 li {
-  margin: 5px 10px;
+  margin: 5px 20px;
+  font-size: 18px;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+div.dropdown-menu {
+  background-color: rgb(60, 60, 60);
+  color: white;
+  right: 1px;
+  margin: 5px 22px;
+  width: fit-content;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.dropdown-menu ul {
+  margin: 10px;
+  padding: 10px;
+}
+
+.dropdown-menu li {
+  margin: 12px 
+}
+
+.dropdown-menu li:hover {
+  cursor: pointer;
 }

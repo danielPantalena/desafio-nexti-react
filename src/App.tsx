@@ -16,7 +16,7 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <Header />
+      <Header toggleTheme={toggleTheme} />
       <div className="App">
         <button onClick={toggleTheme}>Change Theme</button>
         <SelectLanguage />
