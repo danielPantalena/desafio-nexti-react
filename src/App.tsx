@@ -29,20 +29,22 @@ function App() {
   const handleLogout = () => setLoggedIn(false);
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <GlobalStyles />
-      <Header
-        toggleTheme={toggleTheme}
-        theme={theme}
-        showDropdownMenu={showDropdownMenu}
-        setShowDropdownMenu={setShowDropdownMenu}
-        loggedIn={loggedIn}
-        handleLogout={handleLogout}
-      />
-      <div className="App" onClick={handleClickOutsideDropdownMenu}>
-        {loggedIn ? <Main userData={userData} /> : <Login handleLogin={handleLogin} />}
-      </div>
-    </ThemeProvider>
+    <div className="App">
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+        <GlobalStyles />
+        <Header
+          toggleTheme={toggleTheme}
+          theme={theme}
+          showDropdownMenu={showDropdownMenu}
+          setShowDropdownMenu={setShowDropdownMenu}
+          loggedIn={loggedIn}
+          handleLogout={handleLogout}
+        />
+        <div onClick={handleClickOutsideDropdownMenu}>
+          {loggedIn ? <Main userData={userData} /> : <Login handleLogin={handleLogin} />}
+        </div>
+      </ThemeProvider>
+    </div>
   );
 }
 

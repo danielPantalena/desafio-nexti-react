@@ -1,6 +1,7 @@
 import React from 'react';
 import { Aside, Content } from '../../components';
 import { FlexRow } from '../../styled-components';
+import './style.css'
 
 interface IUser {
   firstName: string;
@@ -13,11 +14,9 @@ interface IProps {
 
 export const Main: React.FC<IProps> = ({ userData }) => {
   return (
-    <div>
-      <FlexRow>
+    <div className="main-container">
         <Aside userData={userData} />
         <Content />
-      </FlexRow>
     </div>
   );
 };
