@@ -10,7 +10,7 @@ export const Button = styled.button`
   font-weight: bold;
   padding: 10px 20px;
   text-transform: uppercase;
-  transition: all 300ms;
+  transition: all 400ms;
   &:hover {
     cursor: pointer;
     transform: scale(1.02);
@@ -23,7 +23,7 @@ export const Button = styled.button`
   }
   &:disabled {
     cursor: auto;
-    transform: scale(0.98);
+    transform: scale(1);
     opacity: 0.6;
     box-shadow: none;
   }

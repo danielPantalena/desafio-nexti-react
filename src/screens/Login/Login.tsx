@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Input, Label, FlexColumn, FlexRow } from '../../styled-components';
+import { Button, Input, FlexColumn, FlexRow } from '../../styled-components';
 import { validateLogIn } from '../../helperFunctions';
 
 interface IProps {
@@ -20,19 +20,25 @@ export const Login: React.FC<IProps> = ({ setLoggedIn }) => {
   return (
     <FlexColumn>
       <FlexRow>
-        <Label htmlFor="user">User</Label>
-        <Input id="user" onChange={(event) => setUser(event.target.value)} value={user} />
-      </FlexRow>
-      <FlexRow>
-        <Label htmlFor="password">password</Label>
         <Input
-          id="password"
-          onChange={(event) => setPassword(event.target.value)}
-          value={password}
+          id="user"
+          value={user}
+          placeholder="User"
+          onChange={(event) => setUser(event.target.value)}
         />
       </FlexRow>
       <FlexRow>
-        <Button onClick={handleLogIn} disabled={!user || !password}>LogIn</Button>
+        <Input
+          id="password"
+          value={password}
+          placeholder="Password"
+          onChange={(event) => setPassword(event.target.value)}
+        />
+      </FlexRow>
+      <FlexRow>
+        <Button onClick={handleLogIn} disabled={!user || !password}>
+          LogIn
+        </Button>
       </FlexRow>
       {invalidCredentials && <FlexRow>Invalid Credentials</FlexRow>}
     </FlexColumn>
