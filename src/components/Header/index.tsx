@@ -9,17 +9,21 @@ import { FlexRow } from '../../styled-components';
 import './style.css';
 
 interface IProps {
+  loggedIn: boolean;
   theme: string;
   toggleTheme: { (): void };
   showDropdownMenu: boolean;
   setShowDropdownMenu: { (showMenu: boolean): void };
+  handleLogout: { (): void };
 }
 
 const Header: React.FC<IProps> = ({
+  loggedIn,
   theme,
   toggleTheme,
   showDropdownMenu,
   setShowDropdownMenu,
+  handleLogout,
 }) => {
   const { t } = useTranslation();
   const [themeMode, setThemeMode] = useState(theme);
@@ -50,7 +54,7 @@ const Header: React.FC<IProps> = ({
       {showDropdownMenu && (
         <div className="dropdown-menu">
           <ul>
-            <li>{t('Logout')}</li>
+            {loggedIn && <li onClick={handleLogout}>{t('Logout')}</li>}
             <li onClick={handleTheme}>
               {t(theme)}
               <ThemeButton theme={theme} />

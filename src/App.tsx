@@ -16,6 +16,8 @@ function App() {
 
   const handleClickOutsideDropdownMenu = () => setShowDropdownMenu(false);
 
+  const handleLogout = () => setLoggedIn(false);
+
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
@@ -24,10 +26,10 @@ function App() {
         theme={theme}
         showDropdownMenu={showDropdownMenu}
         setShowDropdownMenu={setShowDropdownMenu}
+        loggedIn={loggedIn}
+        handleLogout={handleLogout}
       />
       <div className="App" onClick={handleClickOutsideDropdownMenu}>
-        <button onClick={toggleTheme}>Change Theme</button>
-        <SelectLanguage />
         {loggedIn ? <h1>{t('Welcome to React')}</h1> : <Login setLoggedIn={setLoggedIn} />}
       </div>
     </ThemeProvider>
