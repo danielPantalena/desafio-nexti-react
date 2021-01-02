@@ -19,6 +19,12 @@ export const Button = styled.button`
   &:active {
     cursor: progress;
     transform: scale(0.98);
-    box-shadow: 0px 0px 0px black;
+    box-shadow: none;
+  }
+  &:disabled {
+    cursor: auto;
+    transform: scale(0.98);
+    opacity: 0.6;
+    box-shadow: none;
   }
 `;

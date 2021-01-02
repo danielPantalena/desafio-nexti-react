@@ -9,8 +9,13 @@ interface IProps {
 export const Login: React.FC<IProps> = ({ setLoggedIn }) => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
+  const [invalidCredentials, setInvalidCredentials] = useState(false);
 
-  const handleLogIn = () => setLoggedIn(validateLogIn(user, password));
+  const handleLogIn = () => {
+    const isValidLogIn = validateLogIn(user, password);
+    setInvalidCredentials(!isValidLogIn);
+    return setLoggedIn(isValidLogIn);
+  };
 
   return (
     <FlexColumn>
@@ -27,8 +32,9 @@ export const Login: React.FC<IProps> = ({ setLoggedIn }) => {
         />
       </FlexRow>
       <FlexRow>
-        <Button onClick={handleLogIn}>LogIn</Button>
+        <Button onClick={handleLogIn} disabled={!user || !password}>LogIn</Button>
       </FlexRow>
+      {invalidCredentials && <FlexRow>Invalid Credentials</FlexRow>}
     </FlexColumn>
   );
 };
