@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getMenusList } from '../../services/getMenusList';
 import { UserInitials } from '../';
 import { FlexColumn, FlexRow } from '../../styled-components';
 import './style.css';
@@ -14,8 +15,16 @@ interface IProps {
 
 const Aside: React.FC<IProps> = ({ userData }) => {
   const initials = userData.firstName.charAt(0) + userData.lastName.charAt(0);
+
+  const [menusList, setTasksList] = useState([]);
+
+  useEffect(() => {
+    getMenusList().then((menusList) => setTasksList(menusList));
+  }, []);
+
   return (
     <aside className="container">
+      {console.log(menusList)}
       <FlexColumn>
         <FlexRow>
           <UserInitials initials={initials} />
