@@ -2,8 +2,7 @@ interface IMenusList {
   menusList: [{ id: number; name: string; subMenus: [{ id: number; name: string }] }];
 }
 
-export const getMenusList = async (): Promise<IMenusList | unknown> => {
-  console.log('getTask');
+const getMenusList = async (): Promise<IMenusList | unknown> => {
   const CORS = 'https://cors-anywhere.herokuapp.com/';
   const tasksListApi = 'desafioreact.s3.amazonaws.com/menu/menu.json';
   try {
@@ -15,3 +14,5 @@ export const getMenusList = async (): Promise<IMenusList | unknown> => {
     console.error(err.message);
   }
 };
+
+export default getMenusList;
