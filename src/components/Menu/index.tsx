@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { MdKeyboardArrowDown } from 'react-icons/md';
+import './style.css';
 
 interface IMenu {
   id: number;
@@ -13,9 +15,13 @@ interface IProps {
 const Menu: React.FC<IProps> = ({ menu }) => {
   const [selected, setSelected] = useState(false);
 
+  const iconClassName = `icon${selected ? ' selected' : ''}`;
   return (
     <div>
-      <p onClick={() => setSelected(!selected)}>{menu.name}</p>
+      <p onClick={() => setSelected(!selected)}>
+        <MdKeyboardArrowDown size={20} className={iconClassName} />
+        {menu.name}
+      </p>
       {selected && (
         <ul>
           {menu.subMenus.map((subMenu) => (

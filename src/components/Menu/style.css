@@ -1,0 +1,8 @@
+.icon {
+  transform: rotate(-90deg);
+  transition: all 400ms;
+}
+
+.icon.selected {
+  transform: rotate(0deg);
+}

@@ -53,7 +53,7 @@ const Header: React.FC<IProps> = ({
         <div className="dropdown-menu">
           <ul>
             {loggedIn && <li onClick={handleLogout}>{t('Logout')}</li>}
-            <li onClick={handleTheme}>
+            <li onClick={toggleTheme}>
               {t(theme)}
               <ThemeButton theme={theme} />
             </li>
