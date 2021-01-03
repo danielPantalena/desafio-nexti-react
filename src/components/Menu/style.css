@@ -24,12 +24,12 @@ p.menu {
   list-style-type: none;
   cursor: pointer;
   width: fit-content;
-  transition: all 400ms;
+  transition: all 350ms;
 }
 
 .sub-menu.selected {
   font-weight: bold;
-  background-color: rgba(206, 100, 0, 0.438);
+  background-color: rgba(206, 100, 0, 0.548);
   border-radius: 2px;
 
 }
