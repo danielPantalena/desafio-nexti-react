@@ -7,6 +7,11 @@
     "Attribute": "Asignar",
     "Archive": "Archivar",
     "Schedule": "Calendario",
-    "New": "Nuevo"
+    "New": "Nuevo",
+    "Help": "Ayuda",
+    "Settings": "Ajustes",
+    "Logout": "Salir",
+    "light": "Claro",
+    "dark": "Oscuro"
   }
 }

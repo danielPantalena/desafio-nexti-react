@@ -7,6 +7,11 @@
     "Attribute": "Attribute",
     "Archive": "Archive",
     "Schedule": "Schedule",
-    "New": "New"
+    "New": "New",
+    "Help": "Help",
+    "Settings": "Settings",
+    "Logout": "Logout",
+    "light": "Light",
+    "dark": "Dark"
   }
 }
