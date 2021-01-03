@@ -1,31 +1,33 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-  background-color: orange;
-  border-radius: 10px;
-  border: 2px solid black;
+  background-color: rgb(233, 78, 15);
+  border-radius: 5px;
+  border: none;
   color: white;
   flex-grow: 1;
-  font-size: 25px;
+  font-size: 12px;
   font-weight: bold;
-  padding: 10px 20px;
+  margin: 10px;
+  min-width: 80px;
+  min-height: 30px;
+  padding: 10px 18px;
   text-transform: uppercase;
   transition: all 400ms;
-  margin: 10px;
   &:hover {
     cursor: pointer;
-    transform: scale(1.02);
-    box-shadow: 2px 2px 2px black;
+    box-shadow: 1px 1px 1px black;
+    transform: scale(1.015);
   }
   &:active {
     cursor: progress;
-    transform: scale(0.98);
     box-shadow: none;
+    transform: scale(0.98);
   }
   &:disabled {
     cursor: auto;
-    transform: scale(1);
-    opacity: 0.4;
     box-shadow: none;
+    opacity: 0.4;
+    transform: scale(1);
   }
 `;
