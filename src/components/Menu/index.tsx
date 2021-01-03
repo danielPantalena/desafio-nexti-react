@@ -24,7 +24,6 @@ const Menu: React.FC<IProps> = ({ menu }) => {
       : [...selectedMenus, menu.id];
 
     setSelectedMenus(newSelectedMenus);
-    console.log(newSelectedMenus);
     return setSelected(!selected);
   };
 
