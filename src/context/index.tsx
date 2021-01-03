@@ -1,7 +1,11 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { getMenusList } from '../services/getMenusList';
 
-const initialValue = { menusList: [] }
+const initialValue = {
+  menusList: [],
+  selectedMenus: [],
+  setSelectedMenus: (menu: any) => menu,
+};
 
 export const Context = createContext(initialValue);
 
@@ -10,13 +14,14 @@ interface IProps {
 }
 
 const ContextProvider: React.FC<IProps> = ({ children }) => {
-  const [menusList, setTasksList] = useState<any>([]); // TODO: Type TS
+  const [menusList, setMenusList] = useState<any>([]); // TODO: Type TS
+  const [selectedMenus, setSelectedMenus] = useState([]);
 
   useEffect(() => {
-    getMenusList().then((response) => setTasksList(response));
+    getMenusList().then((response) => setMenusList(response));
   }, []);
 
-  const contextValue = { menusList };
+  const contextValue = { menusList, selectedMenus, setSelectedMenus };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
 };
