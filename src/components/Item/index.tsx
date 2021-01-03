@@ -1,4 +1,6 @@
 import React from 'react';
+import { UserInitials } from '../../components';
+import { FlexColumn, FlexRow } from '../../styled-components';
 
 interface ISubMenuItem {
   id: number;
@@ -13,7 +15,20 @@ interface IProps {
 }
 
 const Item: React.FC<IProps> = ({ subMenuItem }) => {
-  return <div>{subMenuItem?.subject}</div>;
+  const { id, name, subject, owner, users } = subMenuItem;
+
+  return (
+    <FlexRow>
+      <UserInitials initials={owner} online={false} size="large" />
+      <FlexColumn>
+        <p>{name}</p>
+        <p>{subject}</p>
+      </FlexColumn>
+      {users.map((initials) => (
+        <UserInitials initials={initials} online={false} size="small" />
+      ))}
+    </FlexRow>
+  );
 };
 
 export default Item;

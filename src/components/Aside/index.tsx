@@ -19,7 +19,7 @@ const Aside: React.FC<IProps> = ({ userData }) => {
     <aside className="container">
       <FlexColumn>
         <FlexRow>
-          <UserInitials initials={initials} />
+          <UserInitials initials={initials} online size="large" />
           <span className="text-novo">NOVO</span>
         </FlexRow>
         <MenusList />
