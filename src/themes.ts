@@ -18,6 +18,6 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background-color: ${(props: ITheme) => props.theme.body};
     color: ${(props: ITheme) => props.theme.fontColor};
-    transition: all 500ms;
+    transition: all 400ms;
   }
 `;

@@ -1,13 +1,14 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { getMenusList } from '../services/getMenusList';
+import { getMenusList, getItems } from '../services';
 
 const initialValue = {
   menusList: [],
-  selectedMenus: [],
-  setSelectedMenus: (menu: any) => menu, // TODO: Type TS
-  setMenusList: (menus: any) => menus, 
-  setSearchFilter: (filter: any) => filter, 
+  items: [],
   searchFilter: '',
+  selectedSubMenu: 0,  // TODO: Type TS
+  setMenusList: (menus: any) => menus,
+  setSearchFilter: (filter: any) => filter,
+  setSelectedSubMenu: (id: any) => id,
 };
 
 export const Context = createContext(initialValue);
@@ -18,20 +19,23 @@ interface IProps {
 
 const ContextProvider: React.FC<IProps> = ({ children }) => {
   const [menusList, setMenusList] = useState<any>([]); // TODO: Type TS
-  const [selectedMenus, setSelectedMenus] = useState([]);
+  const [items, setItems] = useState<any>([]);
   const [searchFilter, setSearchFilter] = useState('');
+  const [selectedSubMenu, setSelectedSubMenu] = useState(0);
 
   useEffect(() => {
     getMenusList().then((response) => setMenusList(response));
+    getItems().then((response) => setItems(response));
   }, []);
 
   const contextValue = {
     menusList,
-    selectedMenus,
-    setSelectedMenus,
+    items,
     setMenusList,
     searchFilter,
     setSearchFilter,
+    selectedSubMenu,
+    setSelectedSubMenu
   };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
