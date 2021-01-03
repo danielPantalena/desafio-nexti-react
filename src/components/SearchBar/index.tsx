@@ -39,7 +39,7 @@ const SearchBar = () => {
   return (
     <div className="search-bar-container">
       <FlexColumn>
-        <Input onChange={(event) => setSearchFilter(event.target.value)} value={searchFilter} />
+        <Input onChange={(event) => setSearchFilter(event.target.value)} placeholder={t('Search')} value={searchFilter} />
         <FlexRowFlexStart>
           <ButtonSearchBar>{t('Attribute')}</ButtonSearchBar>
           <ButtonSearchBar onClick={handleArchive} disabled={selectedSubMenu === 0}>
