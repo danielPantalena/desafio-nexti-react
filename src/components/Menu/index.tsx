@@ -4,7 +4,7 @@ import { Context } from '../../context';
 import './style.css';
 
 interface IMenu {
-  id: number;
+  id: never;
   name: string;
   subMenus: [{ id: number; name: string }];
 }
@@ -17,6 +17,10 @@ const Menu: React.FC<IProps> = ({ menu }) => {
   const { selectedMenus, setSelectedMenus } = useContext(Context);
 
   const [selected, setSelected] = useState(false);
+
+  React.useEffect(() => {
+    setSelected(selectedMenus.includes(menu.id))
+  }, [selectedMenus])
 
   const handleSelect = () => {
     const newSelectedMenus = selected

@@ -9,11 +9,11 @@ interface IMenu {
 }
 
 const SearchBar = () => {
-  const { selectedMenus, menusList, setMenusList } = useContext(Context);
+  const { selectedMenus, menusList, setMenusList, setSelectedMenus } = useContext(Context);
 
   const handleArchive = () => {
     const newMenusList = menusList.filter(({ id }: IMenu) => !selectedMenus.includes(id));
-    console.log(selectedMenus);
+    setSelectedMenus([])
     setMenusList(newMenusList)
   };
 
