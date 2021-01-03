@@ -14,9 +14,10 @@ interface IProps {
 }
 
 const Menu: React.FC<IProps> = ({ menu }) => {
-  const { selectedSubMenu, searchFilter, setSelectedSubMenu } = useContext(Context);
+  const { selectedSubMenu, searchFilter, setSelectedSubMenu, menusList } = useContext(Context);
   const [selected, setSelected] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
+  const [listLength, setListLength] = useState(0);
 
   const handleSubMenuSelection = (id: number) => {
     if (selectedSubMenu === id) return setSelectedSubMenu(0);
@@ -38,6 +39,13 @@ const Menu: React.FC<IProps> = ({ menu }) => {
   useEffect(() => {
     handleFilter(searchFilter);
   }, [searchFilter]);
+
+  useEffect(() => {
+    if (listLength > menusList.length) {
+      setSelected(false);
+    }
+    setListLength(menusList.length);
+  }, [menusList]);
 
   const iconClassName = `icon${selected ? ' selected' : ''}`;
 
