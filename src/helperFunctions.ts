@@ -26,6 +26,6 @@ const mockUser = {
 export const getUser = (user: string, password: string): IUser | false =>
   user === 'user' && password === '123' && mockUser;
 
-export const getSubMenuItems = (items: IItem[], selectedId: number) => {
+export const getSubMenuItems = (items: IItem[], selectedId: number): ISubMenuItem[] | null => {
   return items.find(({ id }) => selectedId === id)?.subMenuItems ?? null;
 };
