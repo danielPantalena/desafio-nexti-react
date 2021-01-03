@@ -2,6 +2,7 @@ div.initials-container {
   position: relative;
   margin: 0;
   padding: 0;
+  transition: all 400ms;
 }
 
 div.initials-ball {
@@ -35,4 +36,19 @@ div.initials-ball {
 
 .small {
   transform: scale(0.7);
+}
+
+.checkbox {
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  border-radius: 3px;
+  align-self: center;
+  position: relative;
+}
+
+.check-mark-container {
+  position: absolute;
+  top: -15px;
+  right: -15px;
 }
