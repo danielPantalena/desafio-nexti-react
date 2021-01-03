@@ -1,7 +1,10 @@
 import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Context } from '../../context';
-import { Input, Button, FlexRow } from '../../styled-components';
+import { Input, Button, FlexRowFlexStart, FlexColumn } from '../../styled-components';
 import { removeSelectedSubMenu } from '../../helperFunctions';
+import styled from 'styled-components';
+import './style.css'
 
 interface IMenu {
   id: never;
@@ -9,7 +12,15 @@ interface IMenu {
   subMenus: [{ id: number; name: string }];
 }
 
+const ButtonSearchBar = styled(Button)`
+  flex-grow: 0;
+  min-width: 100px;
+  min-height: 40px;
+`;
+
 const SearchBar = () => {
+
+  const { t } = useTranslation();
   const {
     selectedSubMenu,
     menusList,
@@ -26,17 +37,17 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
-      <FlexRow>
+    <div className="search-bar-container">
+      <FlexColumn>
         <Input onChange={(event) => setSearchFilter(event.target.value)} value={searchFilter} />
-      </FlexRow>
-      <div className="buttons-container">
-        <Button>Atribuir</Button>
-        <Button onClick={handleArchive} disabled={selectedSubMenu === 0}>
-          Arquivar
-        </Button>
-        <Button>Agendar</Button>
-      </div>
+        <FlexRowFlexStart>
+          <ButtonSearchBar>{t('Attribute')}</ButtonSearchBar>
+          <ButtonSearchBar onClick={handleArchive} disabled={selectedSubMenu === 0}>
+          {t('Archive')}
+          </ButtonSearchBar>
+          <ButtonSearchBar>{t('Schedule')}</ButtonSearchBar>
+        </FlexRowFlexStart>
+      </FlexColumn>
     </div>
   );
 };

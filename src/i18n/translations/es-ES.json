@@ -3,6 +3,10 @@
     "Welcome to React": "Bienvenido a React",
     "User": "Usuario",
     "Password": "Contraseña",
-    "Login": "Iniciar sesión"
+    "Login": "Iniciar sesión",
+    "Attribute": "Asignar",
+    "Archive": "Archivar",
+    "Schedule": "Calendario",
+    "New": "Nuevo"
   }
 }
