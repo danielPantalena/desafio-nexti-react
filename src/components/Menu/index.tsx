@@ -27,8 +27,14 @@ const Menu: React.FC<IProps> = ({ menu }) => {
   const handleFilter = (filter: string) => {
     if (!filter) {
       setShowMenu(true);
+      setSelectedSubMenu(0)
       return setSelected(false);
     }
+
+    const id = menu.subMenus.find(({ name }) => name.toLowerCase() === filter.toLowerCase())?.id ?? 0;
+
+    if (id) setSelectedSubMenu(id)
+
     const isMenuFiltered = menu.subMenus.some((subMenu) =>
       subMenu.name.toLowerCase().includes(filter.toLowerCase())
     );
