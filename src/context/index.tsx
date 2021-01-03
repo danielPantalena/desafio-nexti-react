@@ -4,13 +4,14 @@ import { getMenusList } from '../services/getMenusList';
 const initialValue = {
   menusList: [],
   selectedMenus: [],
-  setSelectedMenus: (menu: any) => menu,
+  setSelectedMenus: (menu: any) => menu, // TODO: Type TS
+  setMenusList: (menus: any) => menus, // TODO: Type TS
 };
 
 export const Context = createContext(initialValue);
 
 interface IProps {
-  children: unknown;
+  children: any; // TODO: Type TS
 }
 
 const ContextProvider: React.FC<IProps> = ({ children }) => {
@@ -21,7 +22,7 @@ const ContextProvider: React.FC<IProps> = ({ children }) => {
     getMenusList().then((response) => setMenusList(response));
   }, []);
 
-  const contextValue = { menusList, selectedMenus, setSelectedMenus };
+  const contextValue = { menusList, selectedMenus, setSelectedMenus, setMenusList };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
 };
