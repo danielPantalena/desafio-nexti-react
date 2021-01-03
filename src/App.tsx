@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ContextProvider from './context';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles } from './themes';
 import { Login, Main } from './screens';
@@ -30,20 +31,22 @@ function App() {
 
   return (
     <div className="App">
-      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-        <GlobalStyles />
-        <Header
-          toggleTheme={toggleTheme}
-          theme={theme}
-          showDropdownMenu={showDropdownMenu}
-          setShowDropdownMenu={setShowDropdownMenu}
-          loggedIn={loggedIn}
-          handleLogout={handleLogout}
-        />
-        <div onClick={handleClickOutsideDropdownMenu}>
-          {loggedIn ? <Main userData={userData} /> : <Login handleLogin={handleLogin} />}
-        </div>
-      </ThemeProvider>
+      <ContextProvider>
+        <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+          <GlobalStyles />
+          <Header
+            toggleTheme={toggleTheme}
+            theme={theme}
+            showDropdownMenu={showDropdownMenu}
+            setShowDropdownMenu={setShowDropdownMenu}
+            loggedIn={loggedIn}
+            handleLogout={handleLogout}
+          />
+          <div onClick={handleClickOutsideDropdownMenu}>
+            {loggedIn ? <Main userData={userData} /> : <Login handleLogin={handleLogin} />}
+          </div>
+        </ThemeProvider>
+      </ContextProvider>
     </div>
   );
 }

@@ -1,19 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../../context';
 import { Menu } from '../../components';
 
-import './style.css'
+import './style.css';
 
-interface IMenu {
-  id: number;
-  name: string;
-  subMenus: [{ id: number; name: string }];
-}
+const MenusList: React.FC = () => {
+  const { menusList } = useContext(Context);
 
-interface IProps {
-  menusList: [IMenu];
-}
-
-const MenusList: React.FC<IProps> = ({ menusList }) => {
   return (
     <ul>
       {menusList.map((menu) => (
