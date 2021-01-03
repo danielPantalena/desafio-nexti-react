@@ -4,10 +4,8 @@ import { getMenusList, getItems } from '../services';
 const initialValue = {
   menusList: [],
   items: [],
-  selectedMenus: [],
   searchFilter: '',
-  selectedSubMenu: 0,
-  setSelectedMenus: (menu: any) => menu, // TODO: Type TS
+  selectedSubMenu: 0,  // TODO: Type TS
   setMenusList: (menus: any) => menus,
   setSearchFilter: (filter: any) => filter,
   setSelectedSubMenu: (id: any) => id,
@@ -22,7 +20,6 @@ interface IProps {
 const ContextProvider: React.FC<IProps> = ({ children }) => {
   const [menusList, setMenusList] = useState<any>([]); // TODO: Type TS
   const [items, setItems] = useState<any>([]);
-  const [selectedMenus, setSelectedMenus] = useState([]);
   const [searchFilter, setSearchFilter] = useState('');
   const [selectedSubMenu, setSelectedSubMenu] = useState(0);
 
@@ -31,13 +28,9 @@ const ContextProvider: React.FC<IProps> = ({ children }) => {
     getItems().then((response) => setItems(response));
   }, []);
 
-  console.log('subMenu', selectedSubMenu)
-
   const contextValue = {
     menusList,
     items,
-    selectedMenus,
-    setSelectedMenus,
     setMenusList,
     searchFilter,
     setSearchFilter,
