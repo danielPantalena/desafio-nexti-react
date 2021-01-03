@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { Context } from '../../context';
 import './style.css';
@@ -14,13 +14,29 @@ interface IProps {
 }
 
 const Menu: React.FC<IProps> = ({ menu }) => {
-  const { selectedMenus, setSelectedMenus } = useContext(Context);
-
+  const { selectedMenus, setSelectedMenus, searchFilter } = useContext(Context);
   const [selected, setSelected] = useState(false);
+  const [showMenu, setShowMenu] = useState(true);
 
-  React.useEffect(() => {
-    setSelected(selectedMenus.includes(menu.id))
-  }, [selectedMenus])
+  useEffect(() => {
+    setSelected(selectedMenus.includes(menu.id));
+  }, [selectedMenus]);
+
+  const handleFilter = (filter: string) => {
+    if (!filter) {
+      setShowMenu(true);
+      return setSelected(false);
+    }
+    const isMenuFiltered = menu.subMenus.some((subMenu) =>
+      subMenu.name.toLowerCase().includes(filter.toLowerCase())
+    );
+    setShowMenu(isMenuFiltered);
+    setSelected(isMenuFiltered);
+  };
+
+  useEffect(() => {
+    handleFilter(searchFilter);
+  }, [searchFilter]);
 
   const handleSelect = () => {
     const newSelectedMenus = selected
@@ -34,18 +50,22 @@ const Menu: React.FC<IProps> = ({ menu }) => {
   const iconClassName = `icon${selected ? ' selected' : ''}`;
   return (
     <div>
-      <p onClick={handleSelect} className="menu">
-        <MdKeyboardArrowDown size={20} className={iconClassName} />
-        {menu.name}
-      </p>
-      {selected && (
-        <ul>
-          {menu.subMenus.map((subMenu) => (
-            <li key={subMenu.id} className="sub-menu">
-              {subMenu.name}
-            </li>
-          ))}
-        </ul>
+      {showMenu && (
+        <div>
+          <p onClick={handleSelect} className="menu">
+            <MdKeyboardArrowDown size={20} className={iconClassName} />
+            {menu.name}
+          </p>
+          {selected && (
+            <ul>
+              {menu.subMenus.map((subMenu) => (
+                <li key={subMenu.id} className="sub-menu">
+                  {subMenu.name}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       )}
     </div>
   );

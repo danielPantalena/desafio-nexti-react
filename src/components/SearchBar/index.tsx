@@ -9,22 +9,31 @@ interface IMenu {
 }
 
 const SearchBar = () => {
-  const { selectedMenus, menusList, setMenusList, setSelectedMenus } = useContext(Context);
+  const {
+    selectedMenus,
+    menusList,
+    setMenusList,
+    setSelectedMenus,
+    searchFilter,
+    setSearchFilter,
+  } = useContext(Context);
 
   const handleArchive = () => {
     const newMenusList = menusList.filter(({ id }: IMenu) => !selectedMenus.includes(id));
-    setSelectedMenus([])
-    setMenusList(newMenusList)
+    setSelectedMenus([]);
+    setMenusList(newMenusList);
   };
 
   return (
     <div>
       <FlexRow>
-        <Input />
+        <Input onChange={(event) => setSearchFilter(event.target.value)} value={searchFilter}/>
       </FlexRow>
       <div className="buttons-container">
         <Button>Atribuir</Button>
-        <Button onClick={handleArchive}>Arquivar</Button>
+        <Button onClick={handleArchive} disabled={selectedMenus.length === 0}>
+          Arquivar
+        </Button>
         <Button>Agendar</Button>
       </div>
     </div>
