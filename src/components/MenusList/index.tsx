@@ -1,6 +1,8 @@
 import React from 'react';
 import { Menu } from '../../components';
 
+import './style.css'
+
 interface IMenu {
   id: number;
   name: string;

@@ -18,14 +18,14 @@ const Menu: React.FC<IProps> = ({ menu }) => {
   const iconClassName = `icon${selected ? ' selected' : ''}`;
   return (
     <div>
-      <p onClick={() => setSelected(!selected)}>
+      <p onClick={() => setSelected(!selected)} className='menu'>
         <MdKeyboardArrowDown size={20} className={iconClassName} />
         {menu.name}
       </p>
       {selected && (
         <ul>
           {menu.subMenus.map((subMenu) => (
-            <p>{subMenu.name}</p>
+            <li className="sub-menu">{subMenu.name}</li>
           ))}
         </ul>
       )}

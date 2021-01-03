@@ -1,8 +1,24 @@
 .icon {
   transform: rotate(-90deg);
-  transition: all 400ms;
+  transition: all 300ms;
+  margin-right: 20px;
 }
 
 .icon.selected {
   transform: rotate(0deg);
+}
+
+ul, li {
+  padding: 0;
+}
+
+.menu {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.sub-menu {
+  margin-left: 6vw;
+  list-style-type: none;
+  
 }
