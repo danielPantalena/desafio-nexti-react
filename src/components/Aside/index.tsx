@@ -18,7 +18,7 @@ const Aside: React.FC<IProps> = ({ userData }) => {
   return (
     <aside className="container">
       <FlexColumn>
-        <FlexRow>
+        <FlexRow className="initials-row">
           <UserInitials initials={initials} online size="large" />
           <span className="text-novo">NOVO</span>
         </FlexRow>

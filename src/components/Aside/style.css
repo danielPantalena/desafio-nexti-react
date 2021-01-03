@@ -8,3 +8,8 @@ span.text-novo {
   color: rgb(233, 78, 15);
   font-weight: bold;
 }
+
+.initials-row {
+  border-bottom: 3px solid rgba(124, 124, 124, 0.507);
+  padding: 25px 0px;
+}
