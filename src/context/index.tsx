@@ -5,10 +5,12 @@ const initialValue = {
   menusList: [],
   items: [],
   selectedMenus: [],
+  searchFilter: '',
+  selectedSubMenu: 0,
   setSelectedMenus: (menu: any) => menu, // TODO: Type TS
   setMenusList: (menus: any) => menus,
   setSearchFilter: (filter: any) => filter,
-  searchFilter: '',
+  setSelectedSubMenu: (id: any) => id,
 };
 
 export const Context = createContext(initialValue);
@@ -22,11 +24,14 @@ const ContextProvider: React.FC<IProps> = ({ children }) => {
   const [items, setItems] = useState<any>([]);
   const [selectedMenus, setSelectedMenus] = useState([]);
   const [searchFilter, setSearchFilter] = useState('');
+  const [selectedSubMenu, setSelectedSubMenu] = useState(0);
 
   useEffect(() => {
     getMenusList().then((response) => setMenusList(response));
     getItems().then((response) => setItems(response));
   }, []);
+
+  console.log('subMenu', selectedSubMenu)
 
   const contextValue = {
     menusList,
@@ -36,6 +41,8 @@ const ContextProvider: React.FC<IProps> = ({ children }) => {
     setMenusList,
     searchFilter,
     setSearchFilter,
+    selectedSubMenu,
+    setSelectedSubMenu
   };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;

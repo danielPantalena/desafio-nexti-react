@@ -14,13 +14,14 @@ interface IProps {
 }
 
 const Menu: React.FC<IProps> = ({ menu }) => {
-  const { selectedMenus, setSelectedMenus, searchFilter } = useContext(Context);
+  const { selectedSubMenu, searchFilter, setSelectedSubMenu } = useContext(Context);
   const [selected, setSelected] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
 
-  useEffect(() => {
-    setSelected(selectedMenus.includes(menu.id));
-  }, [selectedMenus]);
+  const handleSubMenuSelection = (id: number) => {
+    if (selectedSubMenu === id) return setSelectedSubMenu(0);
+    return setSelectedSubMenu(id);
+  };
 
   const handleFilter = (filter: string) => {
     if (!filter) {
@@ -38,28 +39,24 @@ const Menu: React.FC<IProps> = ({ menu }) => {
     handleFilter(searchFilter);
   }, [searchFilter]);
 
-  const handleSelect = () => {
-    const newSelectedMenus = selected
-      ? selectedMenus.filter((selectedMenuId) => selectedMenuId !== menu.id)
-      : [...selectedMenus, menu.id];
-
-    setSelectedMenus(newSelectedMenus);
-    return setSelected(!selected);
-  };
-
   const iconClassName = `icon${selected ? ' selected' : ''}`;
+
   return (
     <div>
       {showMenu && (
         <div>
-          <p onClick={handleSelect} className="menu">
+          <p onClick={() => setSelected(!selected)} className="menu">
             <MdKeyboardArrowDown size={20} className={iconClassName} />
             {menu.name}
           </p>
           {selected && (
             <ul>
               {menu.subMenus.map((subMenu) => (
-                <li key={subMenu.id} className="sub-menu">
+                <li
+                  key={subMenu.id}
+                  onClick={() => handleSubMenuSelection(subMenu.id)}
+                  className={`sub-menu${selectedSubMenu === subMenu.id ? ' selected' : ''}`}
+                >
                   {subMenu.name}
                 </li>
               ))}

@@ -20,6 +20,16 @@ p.menu {
 
 .sub-menu {
   margin-left: 6vw;
+  margin-top: 10px;
   list-style-type: none;
-  
+  cursor: pointer;
+  width: fit-content;
+  transition: all 400ms;
+}
+
+.sub-menu.selected {
+  font-weight: bold;
+  background-color: rgba(206, 100, 0, 0.438);
+  border-radius: 2px;
+
 }
