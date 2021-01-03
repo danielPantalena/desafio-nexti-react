@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { UserInitials } from '../../components';
-import { FlexColumn, FlexRow } from '../../styled-components';
+import { FlexColumn, FlexRow, FlexRowFlexEndReverse } from '../../styled-components';
 import './style.css';
 
 interface ISubMenuItem {
@@ -16,7 +16,7 @@ interface IProps {
 }
 
 const Item: React.FC<IProps> = ({ subMenuItem }) => {
-  const { id, name, subject, owner, users } = subMenuItem;
+  const { name, subject, owner, users } = subMenuItem;
   const [showCheckbox, setShowCheckbox] = useState(false);
   const [selected, setSelected] = useState(false);
 
@@ -37,9 +37,11 @@ const Item: React.FC<IProps> = ({ subMenuItem }) => {
           <p>{name}</p>
           <p>{subject}</p>
         </FlexColumn>
-        {users.map((initials) => (
-          <UserInitials initials={initials} online={false} size="small" />
-        ))}
+        <FlexRowFlexEndReverse>
+          {users.map((initials, index) => (
+              <UserInitials initials={initials} online={false} size="small" />
+          ))}
+        </FlexRowFlexEndReverse>
       </FlexRow>
     </div>
   );

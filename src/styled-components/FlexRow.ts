@@ -10,3 +10,11 @@ export const FlexRow = styled.div`
 export const FlexRowFlexStart = styled(FlexRow)`
   justify-content: flex-start;
 `;
+
+export const FlexRowFlexEnd = styled(FlexRow)`
+  justify-content: flex-end;
+`;
+
+export const FlexRowFlexEndReverse = styled(FlexRowFlexEnd)`
+  flex-direction: row-reverse;
+`;

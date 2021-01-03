@@ -9,8 +9,10 @@ const MenusList: React.FC = () => {
 
   return (
     <ul>
-      {menusList.map((menu) => (
-        <Menu menu={menu} />
+      {menusList.map((menu: any) => ( // TODO: Type TS
+        <div key={menu?.id}> 
+          <Menu menu={menu} />
+        </div>
       ))}
     </ul>
   );
