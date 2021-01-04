@@ -1,8 +1,38 @@
-# Getting Started with Create React App
+# Desafio Nexti React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esse desafio prático é uma das fases do processo seletivo da NEXTI para desenvolvedor React.js. As [instruções do desafio podem ser encontradas neste link](https://bitbucket.org/presenca/desafio-nexti-react/src/master/)
 
-## Available Scripts
+---
+
+## Foi iniciado com Create React App
+
+O projeto foi iniciado com este comando
+
+```sh
+yarn create react-app desafio-nexti-react
+```
+
+_yarn create está disponível em Yarn 0.25+_
+
+para rodar este comando é necessário ter o **yarn** com versão igual ou superior a 0.25 instalado. Caso necessário segue o [link para instalação do yarn](https://classic.yarnpkg.com/pt-BR/docs/install/#debian-stable)
+
+Caso deseje, segue um link para saber mais sobre o [Create React App](https://github.com/facebook/create-react-app).
+
+---
+
+### Documentação
+
+Caso deseje rodar este projeto localmente em sua máquina, primeiro faça o clone deste **Repo** e em seguida na pasta raiz do projeto rode este comando para instalar as dependências:
+
+```sh
+yarn install
+```
+
+:heavy_exclamation_mark: *é necessário ter o yarn instalado. Caso não tenha siga as instruções do link mencionado acima*
+
+Depois das dependências instaladas o projeto já está pronto para ser executado em sua máquina e agora já pode rodar os scripts 😊
+
+## Scripts
 
 In the project directory, you can run:
 
