@@ -13,7 +13,7 @@ interface IUser {
 }
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true); // TODO: start loggedIn FALSE
+  const [loggedIn, setLoggedIn] = useState(false);
   const [userData, setUserData] = useState<IUser>({ firstName: '', lastName: '', id: 0 });
   const [theme, setTheme] = useState('light');
   const [showDropdownMenu, setShowDropdownMenu] = useState(false);
