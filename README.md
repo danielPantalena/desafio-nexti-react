@@ -40,7 +40,7 @@ Neste projeto você poderá executar estes scripts
 
 ### `yarn start`
 
-Executa o projeto em mode de desenvolvimento.
+Executa o projeto em modo de desenvolvimento.
 
 Na pasta raiz do projeto execute o comando:
 
@@ -71,9 +71,9 @@ Caso deseje mais informações sobre os tests veja este link: [executando tests]
 
 ### `yarn build`
 
-Compila o aplicato para produção na pasta `build`.\
+Compila o aplicativo para produção na pasta `build`.\
 Agrupa corretamente o React no modo de produção e otimiza a construção para o melhor desempenho.
-Seu aplicativo está pronto para deploy! 😄
+Seu aplicativo estará pronto para deploy! 😄
 
 Na pasta raiz do projeto execute o comando:
 
