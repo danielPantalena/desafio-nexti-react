@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { UserInitials } from '../../components';
 import {
   FlexColumn,
@@ -18,18 +18,23 @@ interface ISubMenuItem {
 
 interface IProps {
   subMenuItem: ISubMenuItem;
+  selected: boolean;
+  someItemSelected: boolean;
 }
 
-const Item: React.FC<IProps> = ({ subMenuItem }) => {
+const Item: React.FC<IProps> = ({ subMenuItem, selected, someItemSelected }) => {
   const { name, subject, owner, users } = subMenuItem;
   const [showCheckbox, setShowCheckbox] = useState(false);
-  const [selected, setSelected] = useState(false);
+
+  useEffect(() => {
+    setShowCheckbox(someItemSelected);
+  }, [someItemSelected]);
 
   return (
-    <FlexRow className="sub-menu-container" onClick={() => setSelected(!selected)}>
+    <FlexRow className="sub-menu-container">
       <FlexRowFlexStart
         onMouseEnter={() => setShowCheckbox(true)}
-        onMouseLeave={() => setShowCheckbox(false)}
+        onMouseLeave={() => setShowCheckbox(someItemSelected)}
       >
         <UserInitials
           initials={owner}

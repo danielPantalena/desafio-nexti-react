@@ -25,6 +25,8 @@ p.menu {
   cursor: pointer;
   width: fit-content;
   transition: all 350ms;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .sub-menu.selected {
