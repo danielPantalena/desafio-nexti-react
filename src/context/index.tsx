@@ -15,8 +15,8 @@ const ContextProvider: React.FC<IProps> = ({ children }) => {
   const [selectedSubMenu, setSelectedSubMenu] = useState(0);
 
   useEffect(() => {
-    getMenusList().then((response) => setMenusList(response));
-    getItems().then((response) => setItems(response));
+    getMenusList().then((response) => setMenusList(response ?? initialValue.menusList));
+    getItems().then((response) => setItems(response ?? initialValue.items));
   }, []);
 
   const contextValue = {

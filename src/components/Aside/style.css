@@ -2,7 +2,6 @@ aside.container {
   height: 85vh;
   padding: 1% 2%;
   width: 25vw;
-  border-right: 2px solid rgba(124, 124, 124, 0.4);
 }
 
 span.text-novo {

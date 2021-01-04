@@ -1,13 +1,18 @@
 div.sub-menu-container {
-  padding: 15px 10px;
-  transition: all 400ms;
-  border-radius: 10px;
+  padding: 15px;
+  transition: all 200ms;
+  border-bottom: 1px solid rgb(122, 122, 122, 0.50);
 }
 
 div.sub-menu-container:hover {
   cursor: pointer;
-  transform: scale(1.01);
-  box-shadow: 1px 1px 2px grey;
+  transform: scale(1.007);
+  background-color: rgb(122, 122, 122, 0.20);
+}
+
+div.sub-menu-container.selected {
+  transform: scale(1.003);
+  background-color: rgb(122, 122, 122, 0.40);
 }
 
 p.item-text {

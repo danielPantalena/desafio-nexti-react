@@ -1,4 +1,6 @@
 div.content-container {
   flex-grow: 4;
   height: 100%;
+  border-left: 2px solid rgba(124, 124, 124, 0.4);
+  min-height: 80vh;
 }

@@ -26,16 +26,19 @@ const Item: React.FC<IProps> = ({ subMenuItem, selected, someItemSelected }) => 
   const { name, subject, owner, users } = subMenuItem;
   const [showCheckbox, setShowCheckbox] = useState(false);
 
+  const className = `sub-menu-container${selected ? ' selected' : ''}`;
+
   useEffect(() => {
     setShowCheckbox(someItemSelected);
   }, [someItemSelected]);
 
   return (
-    <FlexRow className="sub-menu-container">
-      <FlexRowFlexStart
-        onMouseEnter={() => setShowCheckbox(true)}
-        onMouseLeave={() => setShowCheckbox(someItemSelected)}
-      >
+    <FlexRow
+      className={className}
+      onMouseEnter={() => setShowCheckbox(true)}
+      onMouseLeave={() => setShowCheckbox(someItemSelected)}
+    >
+      <FlexRowFlexStart>
         <UserInitials
           initials={owner}
           online={false}
