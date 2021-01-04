@@ -1,15 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { getMenusList, getItems } from '../services';
-
-const initialValue = {
-  menusList: [],
-  items: [],
-  searchFilter: '',
-  selectedSubMenu: 0,  // TODO: Type TS
-  setMenusList: (menus: any) => menus,
-  setSearchFilter: (filter: any) => filter,
-  setSelectedSubMenu: (id: any) => id,
-};
+import { initialValue } from './initialValue';
 
 export const Context = createContext(initialValue);
 
@@ -35,7 +26,7 @@ const ContextProvider: React.FC<IProps> = ({ children }) => {
     searchFilter,
     setSearchFilter,
     selectedSubMenu,
-    setSelectedSubMenu
+    setSelectedSubMenu,
   };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;

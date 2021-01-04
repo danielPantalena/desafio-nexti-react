@@ -9,7 +9,7 @@ import {
 import './style.css';
 
 interface ISubMenuItem {
-  id: number;
+  id: string;
   name: string;
   subject: string;
   owner: string;
@@ -49,7 +49,9 @@ const Item: React.FC<IProps> = ({ subMenuItem }) => {
       </FlexRowFlexStart>
       <FlexRowFlexEndReverse>
         {users.map((initials, index) => (
-          <UserInitials initials={initials} online={false} size="small" />
+          <div key={initials + index}>
+            <UserInitials initials={initials} online={false} size="small" />
+          </div>
         ))}
       </FlexRowFlexEndReverse>
     </FlexRow>
