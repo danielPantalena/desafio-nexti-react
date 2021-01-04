@@ -13,6 +13,11 @@
     "Logout": "Salir",
     "light": "Claro",
     "dark": "Oscuro",
-    "Search": "Buscar"
+    "Search": "Buscar",
+    "Invalid Credentials": "¡Datos incorrectos! Pruebe con nombre de Usuario: user y Contraseña: 123",
+    "Language": "Idioma",
+    "Portuguese": "Portugués",
+    "English": "Inglés",
+    "Spanish": "Español"
   }
 }

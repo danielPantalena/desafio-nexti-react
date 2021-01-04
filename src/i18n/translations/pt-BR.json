@@ -13,6 +13,11 @@
     "Logout": "Sair",
     "light": "Claro",
     "dark": "Escuro",
-    "Search": "Pesquisar"
+    "Search": "Pesquisar",
+    "Invalid Credentials": "Dados incorretos!! Tente Usuário: user e Senha: 123",
+    "Language": "Idioma",
+    "Portuguese": "Português",
+    "English": "Inglês",
+    "Spanish": "Espanhol"
   }
 }

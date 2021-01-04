@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Input, FlexColumn, FlexRow } from '../../styled-components';
 import { getUser } from '../../helperFunctions';
-import './style.css'
+import './style.css';
 
 interface IUser {
   firstName: string;
@@ -50,7 +50,9 @@ export const Login: React.FC<IProps> = ({ handleLogin }) => {
             {t('Login')}
           </Button>
         </FlexRow>
-        {invalidCredentials && <FlexRow>Invalid Credentials</FlexRow>}
+        {invalidCredentials && (
+          <FlexRow>{t('Invalid Credentials')}</FlexRow>
+        )}
       </FlexColumn>
     </div>
   );

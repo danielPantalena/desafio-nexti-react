@@ -13,6 +13,11 @@
     "Logout": "Logout",
     "light": "Light",
     "dark": "Dark",
-    "Search": "Search"
+    "Search": "Search",
+    "Invalid Credentials": "Invalid Credentials. Try User: user and Password: 123",
+    "Language": "Language",
+    "Portuguese": "Portuguese",
+    "English": "English",
+    "Spanish": "Spanish"
   }
 }
