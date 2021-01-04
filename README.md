@@ -123,8 +123,19 @@ Este framework foi usado para implementar com mais facilidade as traduções, ou
 
 Para saber mais sobre acesse [i18next.com](https://www.i18next.com/)
 
+## Dúvidas do desafio
+
+Tive dúvida quanto a funcionalidade do botão "Arquivar" do Requisito component 3:
+
+_Ao clicar no botão "Arquivar" os elementos escolhidos do componente 4 devem ser excluídos da tabela._
+
+Fiquei na dúvida se era para excluir o `item` ou o `menu`. Como o enunciado se referiu ao componente 4 conclui que era para exluir o menu e não um item selcionado já que os itens estão no componente 5.
+
+De qualquer maneira também conseguiria excluir os `itens` sem problema.
+
 ## Aprenda Mais
 
 Você pode aprender mais na [documentação do create react app](https://facebook.github.io/create-react-app/docs/getting-started).
 
 Para aprender React confira a [documentação do react](https://reactjs.org/).
+
