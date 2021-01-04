@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import App from './App';
+import App from '../App';
 
 test('Existe um botão de login com o texto Entrar', () => {
   render(<App />);

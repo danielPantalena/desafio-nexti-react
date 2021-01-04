@@ -6,12 +6,10 @@ div.sub-menu-container {
 
 div.sub-menu-container:hover {
   cursor: pointer;
-  transform: scale(1.007);
   background-color: rgb(122, 122, 122, 0.20);
 }
 
 div.sub-menu-container.selected {
-  transform: scale(1.003);
   background-color: rgb(122, 122, 122, 0.40);
 }
 
