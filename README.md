@@ -50,7 +50,7 @@ yarn start
 
 Abra no seu navegador [http://localhost:3000](http://localhost:3000) para visualizar o projeto.
 
-A página será recarregada com alterações no código.
+A página será recarregada automaticamente com alterações no código.
 Você também poderá ver registros no console do navegador.
 
 ---
@@ -99,7 +99,7 @@ Caso queira saber mais sobre o `TS` acesse: [typescriptlang.org](https://www.typ
 
 ### Context API
 
-Uma vez que foi desejada a inexistencia de [props driling](https://pt.stackoverflow.com/questions/424755/o-que-%C3%A9-prop-drilling) foi utilizada a ferramenta `Context API` do React. Esta ferramenta centraliza todos os estados em um só local e estes poderem ser consumidos por qualquer component que esteja dentro do provedor.
+Uma vez que foi desejada a inexistencia de [props driling](https://pt.stackoverflow.com/questions/424755/o-que-%C3%A9-prop-drilling) foi utilizada a ferramenta `Context API` do React. Esta ferramenta centraliza todos os estados em um só local e estes podem ser consumidos por qualquer component que esteja dentro do provedor.
 
 Foi decidido pelo `Context API` ao invés do `Redux` uma vez que o tempo de desenvolvimento era mais importante do que a performance.
 Portanto, foi escolhido `Context API` por ser um desenvolvimento mais rápido.
@@ -112,7 +112,7 @@ Seguem dois links
 
 ### Styled Components
 
-A biblioteca `Styled Components` foi usada para facilitar a implementação do tema escuro. Além disso essa também facilita a reutilização de componentes já utilizados.
+A biblioteca `Styled Components` foi usada para facilitar a implementação do tema escuro. Além disso essa também facilita a reutilização de componentes já estilizados.
 Para saber mais sobre acesse [styled-components.com](https://styled-components.com/)
 
 ---
