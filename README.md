@@ -4,7 +4,7 @@ Esse desafio prático é uma das fases do processo seletivo da NEXTI para desenv
 
 ---
 
-## Foi iniciado com Create React App
+## Projeto foi iniciado com Create React App
 
 O projeto foi iniciado com este comando
 
@@ -22,7 +22,7 @@ Caso deseje, segue um link para saber mais sobre o [Create React App](https://gi
 
 # Documentação
 
-Caso deseje rodar este projeto localmente em sua máquina, primeiro faça o clone deste **Repo** e em seguida na pasta raiz do projeto rode este comando para instalar as dependências:
+Caso deseje rodar este projeto localmente em sua máquina, primeiro faça o clone deste **Repo**, ou baixe as pastas e arquivos do projeto de outra forma que preferir, e em seguida na pasta raiz do projeto rode este comando para instalar as dependências:
 
 ```sh
 yarn install
@@ -97,11 +97,11 @@ Caso queira saber mais sobre o `TS` acesse: [typescriptlang.org](https://www.typ
 
 ### Context API
 
-Uma vez que foi desejada a inexistencia de [props driling](https://pt.stackoverflow.com/questions/424755/o-que-%C3%A9-prop-drilling) foi utilizada a ferramenta `Context API` do React para centralizar todos os estados em um só local e estes poderem ser transmitidos para qualquer component que esteja dentro do provedor.
+Uma vez que foi desejada a inexistencia de [props driling](https://pt.stackoverflow.com/questions/424755/o-que-%C3%A9-prop-drilling) foi utilizada a ferramenta `Context API` do React. Esta ferramenta centraliza todos os estados em um só local e estes poderem ser consumidos por qualquer component que esteja dentro do provedor.
 
 Foi decidido pelo `Context API` ao invés do `Redux` uma vez que o tempo de desenvolvimento era mais importante do que a performance.
 Portanto, foi escolhido `Context API` por ser um desenvolvimento mais rápido.
-Não entraremos em detalhes das duas tecnologias citadas porém caso deseje saber mais
+Não entraremos em mais detalhes das duas tecnologias citadas porém caso deseje saber mais
 Seguem dois links
 [Context - Documentação React](https://pt-br.reactjs.org/docs/context.html);
 [Redux - Documentação](https://redux.js.org/)
