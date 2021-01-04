@@ -32,6 +32,8 @@ yarn install
 
 Depois das dependências instaladas o projeto já está pronto para ser executado em sua máquina e agora já pode rodar os scripts 😊
 
+ℹ️ **Para realizar o login utilize:** Usuário: `user` e Senha: `123` ℹ️
+
 ## Scripts
 
 Neste projeto você poderá executar estes scripts
