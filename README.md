@@ -1,46 +1,130 @@
-# Getting Started with Create React App
+# Desafio Nexti React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esse desafio prático é uma das fases do processo seletivo da NEXTI para desenvolvedor React.js. As [instruções do desafio podem ser encontradas neste link](https://bitbucket.org/presenca/desafio-nexti-react/src/master/)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Projeto foi iniciado com Create React App
+
+O projeto foi iniciado com este comando
+
+```sh
+yarn create react-app desafio-nexti-react
+```
+
+_yarn create está disponível em Yarn 0.25+_
+
+para rodar este comando é necessário ter o **yarn** com versão igual ou superior a 0.25 instalado. Caso necessário segue o [link para instalação do yarn](https://classic.yarnpkg.com/pt-BR/docs/install/#debian-stable)
+
+Caso deseje, segue um link para saber mais sobre o [Create React App](https://github.com/facebook/create-react-app).
+
+---
+
+# Documentação
+
+Caso deseje rodar este projeto localmente em sua máquina, primeiro faça o clone deste **Repo**, ou baixe as pastas e arquivos do projeto de outra forma que preferir, e em seguida na pasta raiz do projeto rode este comando para instalar as dependências:
+
+```sh
+yarn install
+```
+
+:heavy_exclamation_mark: **é necessário ter o yarn instalado!** Caso não tenha siga as instruções do link mencionado acima
+
+Depois das dependências instaladas o projeto já está pronto para ser executado em sua máquina e agora já pode rodar os scripts 😊
+
+ℹ️ **Para realizar o login utilize:** Usuário: `user` e Senha: `123` ℹ️
+
+## Scripts
+
+Neste projeto você poderá executar estes scripts
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Executa o projeto em mode de desenvolvimento.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Na pasta raiz do projeto execute o comando:
+
+```sh
+yarn start
+```
+
+Abra no seu navegador [http://localhost:3000](http://localhost:3000) para visualizar o projeto.
+
+A página será recarregada com alterações no código.
+Você também poderá ver registros no console do navegador.
+
+---
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Executa todos os tests do projeto
+
+Na pasta raiz do projeto execute o comando:
+
+```sh
+yarn test
+```
+
+Caso deseje mais informações sobre os tests veja este link: [executando tests](https://facebook.github.io/create-react-app/docs/running-tests)
+
+---
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Compila o aplicato para produção na pasta `build`.\
+Agrupa corretamente o React no modo de produção e otimiza a construção para o melhor desempenho.
+Seu aplicativo está pronto para deploy! 😄
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Na pasta raiz do projeto execute o comando:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+yarn build
+```
 
-### `yarn eject`
+Para saber mais sobre deploy consulte este link: [deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Decisões Técnicas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### TypeScript
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Foi escolhido o desenvolvimento em `TypeScript` em vez de `JavaScript` primeiramente para mostrar que tenho essa capacidade. Quem desenvolve em `TypeScript` também desenvolve em `JavaScript` sem dificuldades.
 
-## Learn More
+Além disso, essa ferramenta também foi usada para detectar mais erros em compilação e menos em execução, melhor manutenção do código e outras vantagens.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Caso queira saber mais sobre o `TS` acesse: [typescriptlang.org](https://www.typescriptlang.org/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+### Context API
+
+Uma vez que foi desejada a inexistencia de [props driling](https://pt.stackoverflow.com/questions/424755/o-que-%C3%A9-prop-drilling) foi utilizada a ferramenta `Context API` do React. Esta ferramenta centraliza todos os estados em um só local e estes poderem ser consumidos por qualquer component que esteja dentro do provedor.
+
+Foi decidido pelo `Context API` ao invés do `Redux` uma vez que o tempo de desenvolvimento era mais importante do que a performance.
+Portanto, foi escolhido `Context API` por ser um desenvolvimento mais rápido.
+Não entraremos em mais detalhes das duas tecnologias citadas porém caso deseje saber mais
+Seguem dois links
+[Context - Documentação React](https://pt-br.reactjs.org/docs/context.html);
+[Redux - Documentação](https://redux.js.org/)
+
+---
+
+### Styled Components
+
+A biblioteca `Styled Components` foi usada para facilitar a implementação do tema escuro. Além disso essa também facilita a reutilização de componentes já utilizados.
+Para saber mais sobre acesse [styled-components.com](https://styled-components.com/)
+
+---
+
+### i18next
+
+Este framework foi usado para implementar com mais facilidade as traduções, ou seja, para gerenciar qual texto deve ser exibido segundo a língua escolhida.
+
+Para saber mais sobre acesse [i18next.com](https://www.i18next.com/)
+
+## Aprenda Mais
+
+Você pode aprender mais na [documentação do create react app](https://facebook.github.io/create-react-app/docs/getting-started).
+
+Para aprender React confira a [documentação do react](https://reactjs.org/).
