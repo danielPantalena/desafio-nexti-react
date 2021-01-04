@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { UserInitials } from '../../components';
-import { FlexColumn, FlexRow } from '../../styled-components';
+import {
+  FlexColumn,
+  FlexRow,
+  FlexRowFlexStart,
+  FlexRowFlexEndReverse,
+} from '../../styled-components';
 import './style.css';
 
 interface ISubMenuItem {
@@ -16,13 +21,13 @@ interface IProps {
 }
 
 const Item: React.FC<IProps> = ({ subMenuItem }) => {
-  const { id, name, subject, owner, users } = subMenuItem;
+  const { name, subject, owner, users } = subMenuItem;
   const [showCheckbox, setShowCheckbox] = useState(false);
   const [selected, setSelected] = useState(false);
 
   return (
-    <div className="sub-menu-container" onClick={() => setSelected(!selected)}>
-      <FlexRow
+    <FlexRow className="sub-menu-container" onClick={() => setSelected(!selected)}>
+      <FlexRowFlexStart
         onMouseEnter={() => setShowCheckbox(true)}
         onMouseLeave={() => setShowCheckbox(false)}
       >
@@ -34,14 +39,20 @@ const Item: React.FC<IProps> = ({ subMenuItem }) => {
           selected={selected}
         />
         <FlexColumn>
-          <p>{name}</p>
-          <p>{subject}</p>
+          <FlexRowFlexStart>
+            <p className="item-text owner-name">{name}</p>
+          </FlexRowFlexStart>
+          <FlexRowFlexStart>
+            <p className="item-text subject">{subject}</p>
+          </FlexRowFlexStart>
         </FlexColumn>
-        {users.map((initials) => (
+      </FlexRowFlexStart>
+      <FlexRowFlexEndReverse>
+        {users.map((initials, index) => (
           <UserInitials initials={initials} online={false} size="small" />
         ))}
-      </FlexRow>
-    </div>
+      </FlexRowFlexEndReverse>
+    </FlexRow>
   );
 };
 

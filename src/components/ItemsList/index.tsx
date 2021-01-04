@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Context } from '../../context';
 import { getSubMenuItems } from '../../helperFunctions';
 import { Item } from '../../components';
+import './style.css'
 
 interface ISubMenuItem {
   id: number;
@@ -17,9 +18,11 @@ const ItemsList = () => {
   const selectedSubMenuItems = getSubMenuItems(items, selectedSubMenu);
 
   return (
-    <div>
+    <div className="items-list-container">
       {selectedSubMenuItems?.map((subMenuItem: ISubMenuItem) => (
-        <Item subMenuItem={subMenuItem} />
+        <div key={subMenuItem.id}>
+          <Item subMenuItem={subMenuItem} />
+        </div>
       ))}
     </div>
   );

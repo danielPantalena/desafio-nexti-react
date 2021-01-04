@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Input, FlexColumn, FlexRow } from '../../styled-components';
 import { getUser } from '../../helperFunctions';
+import './style.css'
 
 interface IUser {
   firstName: string;
@@ -26,30 +27,32 @@ export const Login: React.FC<IProps> = ({ handleLogin }) => {
   };
 
   return (
-    <FlexColumn>
-      <FlexRow>
-        <Input
-          id="user"
-          value={user}
-          placeholder={t('User')}
-          onChange={(event) => setUser(event.target.value)}
-        />
-      </FlexRow>
-      <FlexRow>
-        <Input
-          id="password"
-          value={password}
-          placeholder={t('Password')}
-          onChange={(event) => setPassword(event.target.value)}
-        />
-      </FlexRow>
-      <FlexRow>
-        <Button onClick={handleUserLogin} disabled={!user || !password}>
-          {t('Login')}
-        </Button>
-      </FlexRow>
-      {invalidCredentials && <FlexRow>Invalid Credentials</FlexRow>}
-    </FlexColumn>
+    <div className="login-screen-container">
+      <FlexColumn>
+        <FlexRow>
+          <Input
+            id="user"
+            value={user}
+            placeholder={t('User')}
+            onChange={(event) => setUser(event.target.value)}
+          />
+        </FlexRow>
+        <FlexRow>
+          <Input
+            id="password"
+            value={password}
+            placeholder={t('Password')}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </FlexRow>
+        <FlexRow>
+          <Button onClick={handleUserLogin} disabled={!user || !password}>
+            {t('Login')}
+          </Button>
+        </FlexRow>
+        {invalidCredentials && <FlexRow>Invalid Credentials</FlexRow>}
+      </FlexColumn>
+    </div>
   );
 };
 
