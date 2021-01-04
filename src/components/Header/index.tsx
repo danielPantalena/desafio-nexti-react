@@ -28,10 +28,6 @@ const Header: React.FC<IProps> = ({
 
   const handleDropdownMenu = () => setShowDropdownMenu(!showDropdownMenu);
 
-  const handleTheme = () => {
-    toggleTheme();
-  };
-
   return (
     <>
       <header>

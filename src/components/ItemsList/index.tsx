@@ -3,7 +3,6 @@ import { Context } from '../../context';
 import { getSubMenuItems } from '../../helperFunctions';
 import { Item } from '../../components';
 import './style.css';
-import { StringLiteralLike } from 'typescript';
 
 interface ISubMenuItem {
   id: string;
