@@ -5,7 +5,7 @@ import { Item } from '../../components';
 import './style.css'
 
 interface ISubMenuItem {
-  id: number;
+  id: string;
   name: string;
   subject: string;
   owner: string;
